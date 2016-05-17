@@ -40,6 +40,17 @@ public class Person extends GenericDomain {
 	@Column(length = 100, nullable = false)
 	private String email;
 
+	@Column(length = 30, nullable = false)
+	private City city;
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
 	public String getName() {
 		return name;
 	}
