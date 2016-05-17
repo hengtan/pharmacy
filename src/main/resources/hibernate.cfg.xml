@@ -36,10 +36,13 @@
 		
 		<mapping class="heng.pharmacy.domain.City" />
 		<mapping class="heng.pharmacy.domain.Client" />
+		<mapping class="heng.pharmacy.domain.Employee" />
 		<mapping class="heng.pharmacy.domain.Manufacturer" />
 		<mapping class="heng.pharmacy.domain.Person" />
 		<mapping class="heng.pharmacy.domain.Product" />
+		<mapping class="heng.pharmacy.domain.Sale" />
 		<mapping class="heng.pharmacy.domain.State" />
+		<mapping class="heng.pharmacy.domain.User" />
 		
 	</session-factory>
 </hibernate-configuration>
