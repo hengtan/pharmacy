@@ -47,5 +47,13 @@ public class ManufactureDAOTest {
 			System.out.println(manufacturer.getCode() + " - " + manufacturer.getDescription());
 		}
 	}
-	
+
+	@Test
+	public void merge() {
+		Manufacturer manufacturer = new Manufacturer();
+		manufacturer.setDescription("Company Eurofarma");
+
+		ManufacturerDAO manufactureDAO = new ManufacturerDAO();
+		manufactureDAO.merge(manufacturer);
+	}
 }

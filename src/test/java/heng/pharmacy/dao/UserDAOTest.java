@@ -9,7 +9,7 @@ import heng.pharmacy.domain.User;
 public class UserDAOTest {
 
 	@Test
-	
+	@Ignore
 	public void save() {
 
 		PersonDAO personDAO = new PersonDAO();
