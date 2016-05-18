@@ -9,17 +9,20 @@ import heng.pharmacy.domain.City;
 import heng.pharmacy.domain.State;
 
 public class CityDAOTest {
+	
 	@Test
 	@Ignore
 	public void save() {
-
+		
+		Long stateCode = 1L;
+		
 		StateDAO stateDAO = new StateDAO();
-		stateDAO.search(1L);
+		stateDAO.search(stateCode);
 
-		State state = stateDAO.search(1L);
+		State state = stateDAO.search(stateCode);
 
 		City city = new City();
-		city.setName("Sorocaba");
+		city.setName("Rio de Janeiro");
 		city.setState(state);
 
 		CityDAO cityDAO = new CityDAO();
@@ -41,6 +44,7 @@ public class CityDAOTest {
 	}
 
 	@Test
+	@Ignore
 	public void search() {
 		Long code = 1L;
 		CityDAO cityDAO = new CityDAO();
@@ -65,6 +69,7 @@ public class CityDAOTest {
 	}
 
 	@Test
+	@Ignore
 	public void update() {
 		Long code = 1L;
 		CityDAO cityDAO = new CityDAO();

@@ -10,8 +10,9 @@ import heng.pharmacy.domain.Product;
 
 public class ProductDAOTest {
 	@Test
+	@Ignore
 	public void save() {
-		
+
 		ManufacturerDAO manufacturerDao = new ManufacturerDAO();
 		Manufacturer manufacturer = manufacturerDao.search(new Long("1"));
 

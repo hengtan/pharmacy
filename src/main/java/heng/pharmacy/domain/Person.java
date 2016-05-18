@@ -2,6 +2,8 @@ package heng.pharmacy.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @SuppressWarnings("serial")
 @Entity
@@ -28,7 +30,7 @@ public class Person extends GenericDomain {
 	@Column(length = 10, nullable = false)
 	private String zipcode;
 
-	@Column(length = 10, nullable = false)
+	@Column(length = 10)
 	private String complement;
 
 	@Column(length = 13, nullable = false)
@@ -40,16 +42,9 @@ public class Person extends GenericDomain {
 	@Column(length = 100, nullable = false)
 	private String email;
 
-	@Column(length = 30, nullable = false)
+	@OneToOne
+	@JoinColumn(nullable = false)
 	private City city;
-
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
-	}
 
 	public String getName() {
 		return name;
@@ -139,4 +134,13 @@ public class Person extends GenericDomain {
 		this.email = email;
 	}
 
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+	
 }

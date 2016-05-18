@@ -10,7 +10,7 @@ import heng.pharmacy.domain.Manufacturer;
 public class ManufactureDAOTest {
 
 	@Test
-	
+	@Ignore
 	public void save() {
 		Manufacturer manufacturer = new Manufacturer();
 		manufacturer.setDescription("Aché");

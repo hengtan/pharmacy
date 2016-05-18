@@ -33,7 +33,7 @@ public class StateDAOTest {
 	@Test
 	@Ignore
 	public void search() {
-		Long code = 1L;
+		Long code = 3L;
 		StateDAO stateDAO = new StateDAO();
 		State state = stateDAO.search(code);
 		if (state == null) {
@@ -47,20 +47,20 @@ public class StateDAOTest {
 	@Test
 	@Ignore
 	public void delete() {
-		Long code = 1L;
+		Long code = 2L;
 		StateDAO stateDAO = new StateDAO();
 		State state = stateDAO.search(code);
 		stateDAO.delete(state);
 	}
 
 	@Test
+	@Ignore
 	public void update() {
-		Long code = 1L;
+		Long code = 3L;
 		StateDAO stateDAO = new StateDAO();
 		State state = stateDAO.search(code);
 		state.setName("Rio Grande do Norte");
 		state.setSigla("RN");
 		stateDAO.update(state);
 	}
-
 }
