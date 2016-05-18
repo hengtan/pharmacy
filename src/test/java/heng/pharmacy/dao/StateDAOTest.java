@@ -16,7 +16,7 @@ public class StateDAOTest {
 		state.setSigla("RJ");
 
 		StateDAO stateDAO = new StateDAO();
-		stateDAO.Save(state);
+		stateDAO.save(state);
 	}
 
 	@Ignore

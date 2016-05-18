@@ -21,7 +21,7 @@ public class GenericDAO<Entity> {
 				.getActualTypeArguments()[0];
 	}
 
-	public void Save(Entity entity) {
+	public void save(Entity entity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 

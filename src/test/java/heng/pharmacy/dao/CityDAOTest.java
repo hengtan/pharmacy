@@ -23,7 +23,7 @@ public class CityDAOTest {
 		city.setState(state);
 
 		CityDAO cityDAO = new CityDAO();
-		cityDAO.Save(city);
+		cityDAO.save(city);
 	}
 
 	@Test
@@ -34,7 +34,7 @@ public class CityDAOTest {
 		System.out.println("Find: " + result.size());
 		for (City city : result) {
 			System.out.println("City code: " + city.getCode());
-			System.out.println("City name: " + city.getNome());
+			System.out.println("City name: " + city.getName());
 			System.out.println("State abreviation: " + city.getState().getSigla());
 			System.out.println("State name: " + city.getState().getName());
 		}
@@ -49,7 +49,7 @@ public class CityDAOTest {
 			System.out.println("NULL ");
 		} else {
 			System.out.println("City code: " + city.getCode());
-			System.out.println("City name: " + city.getNome());
+			System.out.println("City name: " + city.getName());
 			System.out.println("State abreviation: " + city.getState().getSigla());
 			System.out.println("State name: " + city.getState().getName());
 		}

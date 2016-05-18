@@ -15,12 +15,12 @@ public class City extends GenericDomain {
 	@JoinColumn(nullable = false)
 	private State state;
 
-	public String getNome() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(String nome) {
-		this.name = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public State getState() {
@@ -30,5 +30,7 @@ public class City extends GenericDomain {
 	public void setState(State state) {
 		this.state = state;
 	}
+
+
 
 }
