@@ -9,18 +9,18 @@ import javax.persistence.ManyToOne;
 @Entity
 public class City extends GenericDomain {
 	@Column(length = 50, nullable = false)
-	private String nome;
+	private String name;
 
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private State state;
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 
 	public State getState() {

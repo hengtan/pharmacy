@@ -30,7 +30,7 @@
 		<property name="show_sql">true</property>
 
 		<!-- Cria as tabelas do banco de dados -->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">validate</property>
 
 		<!-- Mapping -->
 		
@@ -41,6 +41,7 @@
 		<mapping class="heng.pharmacy.domain.Person" />
 		<mapping class="heng.pharmacy.domain.Product" />
 		<mapping class="heng.pharmacy.domain.Sale" />
+		<mapping class="heng.pharmacy.domain.SaleItem" />
 		<mapping class="heng.pharmacy.domain.State" />
 		<mapping class="heng.pharmacy.domain.User" />
 		
