@@ -12,28 +12,46 @@
 	<p:growl id="msg" />
 	<h:form>
 		<p:panel header="States list">
-			<p:dataTable emptyMessage="No states to show" paginator="true">
+			<p:dataTable emptyMessage="No states to show" paginator="true"
+				value="#{statesBean.states}" var="states" rows="10">
 				<f:facet name="header">
-					<p:commandButton value="New" oncomplete="PF('dialogo').show();" 
-					actionListener="#{statesBean.newState()}"/>
+					<p:commandButton value="New" oncomplete="PF('dialogo').show();"
+						actionListener="#{statesBean.newState}"
+						update=":formCad:panelCadIns" />
 				</f:facet>
 
-				<p:column headerText="Name">
+				<p:column headerText="Name" sortBy="#{states.name}"
+					filterBy="#{states.name}">
+					<h:outputText value="#{states.name}" />
 				</p:column>
 
 				<p:column headerText="Abbreviation">
+					<h:outputText value="#{states.sigla}" />
 				</p:column>
 
 				<p:column headerText="Options">
+					<p:commandButton icon="ui-icon-trash"
+						actionListener="#{statesBean.delete}" update="msg">
+						<p:confirm header="Confirmation" message="Delete the state?"
+							icon="ui-icon-alert" />
+						<f:attribute name="selectedState" value="#{states}" />
+					</p:commandButton>
+
 				</p:column>
 			</p:dataTable>
+			<p:confirmDialog global="true">
+				<p:commandButton value="Yes" type="button"
+					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				<p:commandButton value="No" type="button"
+					styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			</p:confirmDialog>
 		</p:panel>
 	</h:form>
 
 	<p:dialog header="Creating new state" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
-			<h:panelGrid columns="2">
+		<h:form id="formCad">
+			<h:panelGrid id="panelCadIns" columns="2">
 				<p:outputLabel value="Name:" />
 				<p:inputText maxlength="50" size="30"
 					value="#{statesBean.state.name}" />
@@ -41,12 +59,12 @@
 				<p:outputLabel value="Abbreviation:" />
 				<p:inputText maxlength="2" size="10"
 					value="#{statesBean.state.sigla}" />
-					
+
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
 				<p:commandButton value="Save" actionListener="#{statesBean.save}"
-					update=":msg" />
+					update=":msg :formCad:panelCadIns" />
 				<p:commandButton value="Close" oncomplete="PF('dialogo').hide();"
 					actionListener="#{statesBean.newState}" />
 			</h:panelGrid>

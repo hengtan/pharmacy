@@ -103,7 +103,7 @@ public class GenericDAO<Entity> {
 			session.close();
 		}
 	}
-	
+
 	public void merge(Entity entity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
